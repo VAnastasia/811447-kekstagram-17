@@ -65,7 +65,7 @@ var createPhoto = function (obj, url) {
   var photoElement = photoTemplate.cloneNode(true);
   photoElement.querySelector('img').src = 'photos/' + url + '.jpg';
   photoElement.querySelector('.picture__likes').textContent = getRandomNumber(LIKES_AMOUNT_START, LIKES_AMOUNT_FINISH);
-  photoElement.querySelector('.picture__comments').textContent = getRandomItem(COMMENTS);
+  photoElement.querySelector('.picture__comments').textContent = getRandomNumber(0, 100);
   return photoElement;
 };
 
