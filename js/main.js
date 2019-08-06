@@ -82,4 +82,4 @@ var addPhotos = function () {
 
 addPhotos();
 
-console.log(generateObjects(NUMBER_OBJECTS, NUMBER_AVATARS));
+// console.log(generateObjects(NUMBER_OBJECTS, NUMBER_AVATARS));
