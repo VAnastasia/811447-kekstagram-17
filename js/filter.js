@@ -1,6 +1,7 @@
 'use strict';
 
 (function () {
+  var ESC_CODE = 27;
   var effectsMap = {
     'none': 'effects__preview--none',
     'chrome': 'effects__preview--chrome',
@@ -32,7 +33,7 @@
   var textDescription = document.querySelector('.text__description');
 
   var onTextDescriptionEsc = function (evt) {
-    if (evt.keyCode === 27) {
+    if (evt.keyCode === ESC_CODE) {
       evt.stopPropagation();
       textDescription.blur();
     }
