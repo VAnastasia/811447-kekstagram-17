@@ -19,6 +19,9 @@
       fragment.appendChild(createPhoto(elem));
     });
     pictures.appendChild(fragment);
+
+    var filters = document.querySelector('.img-filters');
+    filters.classList.remove('img-filters--inactive');
   };
 
   var onError = function () {
