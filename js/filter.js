@@ -10,7 +10,7 @@
     'heat': 'effects__preview--heat'
   };
   var sliderPin = document.querySelector('.effect-level__pin');
-  var effectValue = document.querySelector('.effect-level__value');
+  // var effectValue = document.querySelector('.effect-level__value');
   var effectDepth = document.querySelector('.effect-level__depth');
   var preview = document.querySelector('.img-upload__preview img');
   var fieldsetEffects = document.querySelector('.effects');
@@ -23,10 +23,25 @@
 
   fieldsetEffects.addEventListener('change', function () {
     var checkedEffect = fieldsetEffects.querySelector('.effects__radio:checked');
-    console.log(checkedEffect);
     sliderPin.style.left = '0';
     effectDepth.style.width = '0';
     preview.className = '';
     preview.classList.add(effectsMap[checkedEffect.value]);
   });
+
+  var textDescription = document.querySelector('.text__description');
+
+  var onTextDescriptionEsc = function (evt) {
+    if (evt.keyCode === 27) {
+      evt.stopPropagation();
+      textDescription.blur();
+    }
+  };
+
+  var onFocusTextDescription = function () {
+    textDescription.addEventListener('keydown', onTextDescriptionEsc);
+  };
+
+
+  textDescription.addEventListener('focus', onFocusTextDescription);
 })();
